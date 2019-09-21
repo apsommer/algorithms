@@ -4,7 +4,7 @@ Find the square root of the integer without using any Python library. You have t
 
 For example if the given number is 16, then the answer would be 4.
 
-If the given number is 27, the answer would be 5 because sqrt(5) = 5.196 whose floor value is 5.
+If the given number is 27, the answer would be 5 because sqrt(27) = 5.196 whose floor value is 5.
 
 The expected time complexity is `O(log(n))`
 
