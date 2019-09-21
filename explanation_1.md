@@ -8,10 +8,6 @@ If the given number is 27, the answer would be 5 because sqrt(27) = 5.196 whose 
 
 The expected time complexity is `O(log(n))`
 
-### Solution
-
-problem_1.py
-
 #### Data Structures
 
 This particular problem is fairly simple and does not contain any custom or built-in data structures. It only manipulates primitive integer data types. A binary search technique is used to continuously multiplying an integer by 1/2 until a desired value is found.
