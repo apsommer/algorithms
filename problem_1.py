@@ -18,7 +18,7 @@ def sqrt(number):
         return number
 
     # begin recursion over one half the input span, since a square root
-    # is never larger than n/2 for n > 2
+    # is never larger than n//2 for n>2
     return sqrt_recursion(number, 0, number//2)
 
 # recursive algrothim using binary search to achieve the required O(log(n)) time
