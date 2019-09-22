@@ -10,8 +10,8 @@ def rearrange_digits(input_list):
 
     # type check input: must be a clean list of integers > 0
     for element in input_list:
-        if not isinstance(element, int) or element < 0:
-            print("Input must be a list of integers > 0.")
+        if not isinstance(element, int) or element < 0 or element > 9:
+            print("Input must be a list of positive integers i, where 0 < i < 9.")
             return
 
     # start recursive quicksort over the entire breath of the input list
@@ -118,13 +118,14 @@ test_function([[1, 2, 3, 4, 5], [542, 31]])
 # Pass
 test_function([[4, 6, 2, 5, 9, 8], [964, 852]])
 # Pass
-print(rearrange_digits([7, 4, 94, 82, 1, 0]))
-# [9471, 8240]
-print(rearrange_digits([4, 6, 2, 5, 9, 8, 14, 22, 0, 23]))
-# [2314852, 229640]
+print(rearrange_digits([7, 4, 9, 8, 1, 0]))
+# [971, 840]
+print(rearrange_digits([4, 6, 2, 5, 9, 8, 1, 0, 2, 4]))
+# [96421, 85420]
 rearrange_digits("apples")
-# Input must be a list of integers > 0.
+# Input must be a list of positive integers i, where 0 < i < 9.
 rearrange_digits([4, "apples", 2, 16])
-# Input must be a list of integers > 0.
+# Input must be a list of positive integers i, where 0 < i < 9.
 rearrange_digits([-1, 4, 3, 5])
-# Input must be a list of integers > 0.
+# Input must be a list of positive integers i, where 0 < i < 9.
+rearrange_digits([42, 4, 3, 5])
