@@ -22,4 +22,4 @@ Since this algorithm uses binary search its time complexity is O(log(n)). On eac
 
 #### Space Complexity
 
-Space complexity is also O(log(n)) for the same reason as time complexity. Variables holding the start, middle, and end elements must be stored for each level of recursion, and there are log(n) levels of recursion needed to find the solution in the worst case.
+Space complexity is also O(log(n)) for the same reason as time complexity. Variables holding the start, middle, and end elements must be stored for each level of recursion, and there are log(n) levels of recursion needed in the worst case.
