@@ -8,31 +8,49 @@ def rearrange_digits(input_list):
        (int),(int): Two maximum sums
     """
 
+    # start recursive mergesort over the entire breath of the input list
     sorted_input = mergesort(input_list, 0, len(input_list) - 1)
     print(sorted_input)
 
+# move a single "pivot" element to its final sorted location in the list
 def move_pivot(input, s, p):
 
+    # either the pivot index p, or the start index s, move on each iteration
+
+    # base case: the indexes are pointing to the same element
     if p == s:
         return p
 
+    # get the element values at these indexes
     start = input[s]
     pivot = input[p]
 
+    # if the pivot value is less than the start value, rotate three elements
+    # resulting in the pivot moving back one index
     if pivot < start:
 
+        # one less than pivot to start, pivot back one, start to pivot
         input[s] = input[p - 1]
         input[p - 1] = pivot
         input[p] = start
 
+        # move the pivot index back one to reflect the change and prepare for
+        # next level of recursion
         p -= 1
 
+    # else don't move any elements, but consider one element to the right of
+    # start on the next level of recursion
     else:
         s += 1
 
+    # drive all the way down to the base case, and return it all the way up
     return move_pivot(input, s, p)
 
+# recursive method considers the passed end index as the pivot and moves it
+# to its final, sorted location
 def mergesort(input, s, e):
+
+    # TODO more comments
 
     if e <= s:
         return
