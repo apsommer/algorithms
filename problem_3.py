@@ -14,8 +14,8 @@ def rearrange_digits(input_list):
             print("Input must be a list of integers > 0.")
             return
 
-    # start recursive mergesort over the entire breath of the input list
-    sorted_input = mergesort(input_list, 0, len(input_list) - 1)
+    # start recursive quicksort over the entire breath of the input list
+    sorted_input = quicksort(input_list, 0, len(input_list) - 1)
 
     # the sorting above is 90% of this problem, the remaining logic simply steps
     # through the sorted array, backwards, building two strings using simple
@@ -84,10 +84,10 @@ def move_pivot(input, s, p):
 
 # recursive method considers the passed end index as the pivot and moves it
 # to its final, sorted location
-def mergesort(input, s, e):
+def quicksort(input, s, e):
 
     # after the pivot is placed, the sublist to the left of the pivot and the
-    # sublist to the right are sent back through mergesort() to have their
+    # sublist to the right are sent back through quicksort() to have their
     # pivots (ending elements) moved to their correct final positions
 
     # base case: starting and ending indexes have crossed one another
@@ -97,11 +97,11 @@ def mergesort(input, s, e):
     # move the ending element (pivot) and return its final location
     p = move_pivot(input, s, e)
 
-    # mergesort the left remaining sublist
-    mergesort(input, s, p - 1)
+    # quicksort the left remaining sublist
+    quicksort(input, s, p - 1)
 
     # mergest sort the right remaining sublist
-    mergesort(input, p + 1, e)
+    quicksort(input, p + 1, e)
 
     return input
 
