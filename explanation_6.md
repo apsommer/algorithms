@@ -6,9 +6,9 @@ In this problem, we will look for smallest and largest integer from a list of un
 
 The provided solution runs in a single traversal.
 
-**Bonus Challenge #2**: Sorting usually requires O(n log n) time Can you come up with a O(n) algorithm (i.e., linear time)?
+**Bonus Challenge #2**: Sorting usually requires O(n log n) time Can you come up with a O(n) algorithm?
 
-Yes. One such algorithm is radix sort, also called bucket sort or digital sort. On each pass through the array, the same digit in each multi-digit element is considered. All numbers containing this digit are put into the same bucket, then the next digit is considered, etc. ... For example, the English alphabet has 26 buckets and the common base 10 number set has 10 buckets for integers 0-9. This clever algorithm takes `O(bn)` time, where b is the number of buckets which reduces to linear `O(n)` time.
+Yes. One such algorithm is [radix sort](https://en.wikipedia.org/wiki/Radix_sort), also called bucket sort or digital sort. On each pass through the array, the same digit in each multi-digit element is considered. All numbers containing this digit are put into the same bucket, then the next digit is considered, etc. ... For example, the English alphabet has 26 buckets and the common base 10 number set has 10 buckets for integers 0-9. This clever algorithm takes `O(bn)` time, where b is the number of buckets which reduces to linear `O(n)` time.
 
 #### Data Structures
 
