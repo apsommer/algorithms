@@ -31,7 +31,7 @@ def get_min_max(ints):
             min = element
 
         # current element is greater than max, update max
-        if element > max:
+        elif element > max:
             max = element
 
     return (min, max)
