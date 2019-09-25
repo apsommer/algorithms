@@ -1,27 +1,41 @@
-# A RouteTrie will store our routes and their associated handlers
-class RouteTrie:
-    def __init__(self, ...):
-        # Initialize the trie with an root node and a handler, this is the root path or home page node
+# represents a single node in the trie
+class RouteTrieNode:
 
-    def insert(self, ...):
-        # Similar to our previous example you will want to recursively add nodes
-        # Make sure you assign the handler to only the leaf (deepest) node of this path
+    # constructor: initialize each node with a child hashmap and a handler string
+    def __init__(self, handler = None):
+        self.children = {}
+        self.handler = handler
+
+    # add a child, where all children are hashmap pairs char:node
+    def insert(self, char):
+        self.children[char] = RouteTrieNode()
+
+# stores routes and their associated handlers
+class RouteTrie:
+
+    # constructor: initialize the trie with a root node, this is the root path or homepage node
+    def __init__(self):
+        self.root = RouteTrieNode()
+
+    # Similar to our previous example you will want to recursively add nodes
+    # Make sure you assign the handler to only the leaf (deepest) node of this path
+    def insert(self, path):
+
+        node = self.root
+
+        def _insert(node, path):
+
+            
+
+        _insert(node, path)
 
     def find(self, ...):
         # Starting at the root, navigate the Trie to find a match for this path
         # Return the handler for a match, or None for no match
 
-# A RouteTrieNode will be similar to our autocomplete TrieNode... with one additional element, a handler.
-class RouteTrieNode:
-    def __init__(self, ...):
-        # Initialize the node with children as before, plus a handler
 
-    def insert(self, ...):
-        # Insert the node as before
 
-#####################################
-
-# The Router class will wrap the Trie and handle
+# The Router class will wrap the Trie and handler
 class Router:
     def __init__(self, ...):
         # Create a new RouteTrie for holding our routes

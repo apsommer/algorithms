@@ -24,8 +24,8 @@ Bonus Points: Add a not found handler to your Router which is returned whenever 
 
 More Bonus Points: Handle trailing slashes! A request for '/about' or '/about/' are probably looking for the same page. Requests for '' or '/' are probably looking for the root handler. Handle these edge cases in your Router.
 
-### Solution
+#### Data Structures
 
-problem_6.ipynb
+#### Time Complexity
 
-### Explanation
+#### Space Complexity
