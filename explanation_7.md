@@ -18,14 +18,18 @@ We can also simplify our RouteTrie a bit by excluding the suffixes method and th
 
 Next we need to implement the actual Router. The router will initialize itself with a RouteTrie for holding routes and associated handlers. It should also support adding a handler by path and looking up a handler by path. All of these operations will be delegated to the RouteTrie.
 
-Hint: the RouteTrie stores handlers under path parts, so remember to split your path around the '/' character
+The RouteTrie stores handlers under path parts, so remember to split your path around the '/' character.
 
-Bonus Points: Add a not found handler to your Router which is returned whenever a path is not found in the Trie.
+**Bonus Point #1**: Add a not found handler to your Router which is returned whenever a path is not found in the Trie.
 
-More Bonus Points: Handle trailing slashes! A request for '/about' or '/about/' are probably looking for the same page. Requests for '' or '/' are probably looking for the root handler. Handle these edge cases in your Router.
+**Bonus Point #2**: Handle trailing slashes! A request for '/about' or '/about/' are probably looking for the same page. Requests for '' or '/' are probably looking for the root handler. Handle these edge cases in your Router.
 
 #### Data Structures
 
+The primary data structure in this implementation is the [Trie](https://en.wikipedia.org/wiki/Trie). This data structure is ideal for sequential data such as words, directories, or other hierarchies. Each node contains some primitive data and a hashmap of an unlimited number of children nodes. This creates a tree-like structure of nodes that can be traversed via the children key:node pairs. For this particular problem, a router class wraps the trie and its nodes for convenience.
+
 #### Time Complexity
+
+With respect to the node, insertion is constant O(1). With respect to the trie, the recursive insert method is linear O(n), where n = number of segments (endpoints) in the path. Find is also linear time O(n) since we need to traverse n path segments to find a given node.
 
 #### Space Complexity
