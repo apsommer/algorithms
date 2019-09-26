@@ -41,7 +41,7 @@ def binary_search(input_list, number, s, e):
         return -1
 
     # target is on the left side of the middle element
-    if (start < mid and number < mid) or (start > mid and number >= start):
+    if number >= start and (start < mid and number < mid) or start > mid:
         return binary_search(input_list, number, s, m - 1)
 
     # target is on the right side of the middle element

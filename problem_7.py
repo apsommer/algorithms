@@ -40,7 +40,7 @@ class RouteTrie:
 
             _insert(node, i + 1)
 
-        # start recursion from the root and the first endpoint in the full path string
+        # start recursion from the root and the first endpoint
         _insert(self.root, 0)
 
     # iteratively find node in the trie

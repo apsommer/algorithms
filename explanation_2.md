@@ -9,7 +9,7 @@ You are given a target value to search. If found in the array return its index, 
 You can assume there are no duplicates in the array and your algorithm's runtime complexity must be in the order of `O(log n)`.
 
 Example:
-Input: `nums = [4,5,6,7,0,1,2], target = 0`
+Input: `nums = [4, 5, 6, 7, 0, 1, 2], target = 0`
 Output: `4`
 
 #### Data Structures

@@ -32,18 +32,17 @@ def sqrt_recursion(number, start, end):
     if square == number:
         return mid
 
-    # the true root must be in the upper half of remaining numbers, between mid:end
+    # since the square is less than the target, the true root must be in the upper half of remaining numbers
     if square < number:
 
-        # we have recursed as far as possible, since we want the floor value of sqrt(n) the current
-        # value of mid is the correct output
+        # we have recursed as far as possible, since we want the floor value of sqrt(n) the current value of mid is the correct output
         if mid == end - 1:
             return mid
 
         # recurse into upper half between mid:end
         return sqrt_recursion(number, mid, end)
 
-    # the true root must be in the lower half of remaining numbers, between start:mid
+    # since the square is greater than the target, the true root must be in the lower half of remaining numbers
     if square > number:
         return sqrt_recursion(number, start, mid)
 
