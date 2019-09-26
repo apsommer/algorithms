@@ -26,10 +26,14 @@ The RouteTrie stores handlers under path parts, so remember to split your path a
 
 #### Data Structures
 
-The primary data structure in this implementation is the [Trie](https://en.wikipedia.org/wiki/Trie). This data structure is ideal for sequential data such as words, directories, or other hierarchies. Each node contains some primitive data and a hashmap of an unlimited number of children nodes. This creates a tree-like structure of nodes that can be traversed via the children key:node pairs. For this particular problem, a router class wraps the trie and its nodes for convenience.
+The primary data structure in this implementation is the [Trie](https://en.wikipedia.org/wiki/Trie). This data structure is ideal for sequential data sets such as words, directories, or other hierarchies. Each node contains some primitive data and a hashmap who's values are an unlimited number of children nodes. This creates a tree-like structure that can be traversed via key:node pairs. For this particular problem, a router class wraps the trie and its constituent nodes for convenience.
 
 #### Time Complexity
 
-With respect to the node, insertion is constant O(1). With respect to the trie, the recursive insert method is linear O(n), where n = number of segments (endpoints) in the path. Find is also linear time O(n) since we need to traverse n path segments to find a given node.
+With respect to the node, insertion is constant O(1). With respect to the trie, the recursive insert method is linear O(n), where n = number of segments (endpoints) in the path delineated by the `/` character. Search is also linear time O(n) since we need to traverse n path segments to find a given node. The router class wraps the trie and does not increase the order-of-magnitude time complexity.
 
 #### Space Complexity
+
+With respect to the node, insertion is constant O(1) if no handler is specified. However, for this implementation which treats the handler as a string, the space requirement is O(n) when a handler is passed, where n = number of characters in the string. With respect to the trie, the recursive insert method is O(n) since we need to add n primitive collections to the call stack to create a new endpoint. In contrast, the iterative search method is constant O(1) since for each iteration the primitives are discarded.
+
+With respect to the router, the add_handler method splits the path string and creates a new list of size n, resulting in total O(2n) which still reduces to O(n). The lookup method is an interesting case. The path string is split to a list of n elements for O(n) and then passed to the trie's find method which requires O(1). Therefore, the method doing the work is constant O(1) but to create its input is O(n), where n = the number of segments in the path delineated by `/`.
