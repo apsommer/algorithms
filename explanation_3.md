@@ -8,7 +8,7 @@ The expected answer would be [531, 42]. Another expected answer can be [542, 31]
 
 #### Data Structures
 
-Mergesort is an in-place, divide and conquer, sorting algorithm. The only data structure utilized is an array, with integer and string primitives to perform requisite calculations.
+Quicksort is an in-place, divide and conquer, sorting algorithm. The only data structure utilized is an array, with integer and string primitives to perform requisite calculations.
 
 #### Time Complexity
 
@@ -16,4 +16,6 @@ The phrase "expected time complexity" is interpreted as "average case complexity
 
 #### Space Complexity
 
-The space complexity is the reason quicksort was chosen over mergesort. The worst case time of mergesort is equivalent to the expected time of quicksort at `O(nlog(n))`, however mergesort requires `O(n)` space while quicksort only uses `O(1)`. This is a dramatic space improvement. The reason that mergesort requires linear space is because it needs temporary arrays at each iteration, and at the lowest level of recursion `n` arrays are used. In contrast, quicksort is an in-place sorting algorithm, meaning the pivot movement is native to the original input array with no other structures being required for temporary storage.
+The space complexity is the reason quicksort was chosen over mergesort. The worst case time of mergesort is equivalent to the expected time of quicksort at `O(nlog(n))`, however mergesort requires `O(n)` auxiliary space while quicksort only uses `O(1)` auxiliary space. This is a dramatic improvement. The reason that mergesort requires linear space is because it needs temporary arrays at each iteration, and at the lowest level of recursion `n` arrays are used. In contrast, quicksort is an in-place sorting algorithm, meaning the pivot movement is native to the original input array with no other structures being required for temporary storage.
+
+As stated, the above discussion in relative to auxiliary space. To be clear, both the chosen quicksort and its alternate mergesort require O(n) total space. This is because the input list itself requires O(n) space in memory prior to the algorithm even starting. The two integer output itself also grows proportionally with the input size n.
