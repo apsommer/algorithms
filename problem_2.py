@@ -32,9 +32,13 @@ def binary_search(input_list, number, s, e):
     mid = input_list[m]
     end = input_list[e]
 
-    # base case: target found
+    # base cases: target found
     if number == mid:
         return m
+    elif number == start:
+        return s
+    elif number == end:
+        return e
 
     # base case: array exhausted target does not exist
     if mid == end:
