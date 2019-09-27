@@ -18,8 +18,8 @@ There are no additional data structures needed to solve this problem. Elements i
 
 #### Time Complexity
 
-Since this algorithm uses binary search its time complexity is O(log(n)). On each recursive level, half the array length is considered relative to the previous level. This power-of-two pattern yields a log(n) runtime.
+Since this algorithm uses binary search its auxiliary time complexity is O(log(n)). On each recursive level, half the array length is considered relative to the previous level. This power-of-two pattern yields a log(n) runtime. The overall time complexity takes into account the input which is O(n), this term dominates O(log(n)) and therefore the total complexity reduces to O(n).
 
 #### Space Complexity
 
-Space complexity is also O(log(n)) for the same reason as time complexity. Variables holding the start, middle, and end elements must be stored for each level of recursion, and there are log(n) levels of recursion needed in the worst case.
+Auxiliary space complexity is also O(log(n)) for the same reason as time complexity. Variables holding the start, middle, and end elements must be stored for each level of recursion, and there are log(n) levels of recursion needed in the worst case. The overall space complexity takes into account the input which is O(n), this term dominates O(log(n)) and therefore the total complexity reduces to O(n).
