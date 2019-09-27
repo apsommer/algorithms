@@ -16,7 +16,7 @@ No data structures are required other than the input array and a few primitives.
 
 #### Time Complexity
 
-Time complexity is `O(n)` by inspection. Each element in the array must be compared once.
+Time complexity is `O(n)` by inspection. Each element in the array must be compared once in this [linear search](https://en.wikipedia.org/wiki/Linear_search)
 
 #### Space Complexity
 
