@@ -17,31 +17,27 @@ def rearrange_digits(input_list):
     # start recursive quicksort over the entire breath of the input list
     sorted_input = quicksort(input_list, 0, len(input_list) - 1)
 
-    # the sorting above is 90% of this problem, the remaining logic simply steps
-    # through the sorted array, backwards, building two strings using simple
-    # concatenation, these strings are then converted back to integers and output
+    # the sorting above is 90% of this problem, the remaining logic simply steps through the sorted array, builds two integers using essentially integer concatenation
 
-    # temporary strings built while stepping through the sorted array
-    one = ""
-    two = ""
+    # variables for the output and the 10^n multiplier
+    one = 0
+    two = 0
+    base_10 = 1
 
-    # loop through the sorted array backwards, one element at a time
-    for i in range(len(sorted_input) - 1, -1, -1):
+    # loop through the sorted array
+    for i in range(len(sorted_input)):
 
         # get the current element
         element = sorted_input[i]
 
         # index is even, add to "one"
         if i % 2 == 0:
-            one += str(element)
+            one += element * base_10
 
         # index is odd, add to "two"
         else:
-            two += str(element)
-
-    # convert strings to integers, isn't python great? :)
-    one = int(one)
-    two = int(two)
+            two += element * base_10
+            base_10 *= 10
 
     # return the output in the specified format
     if one > two:
