@@ -13,6 +13,10 @@ def sqrt(number):
         print("Input must be an integer.")
         return
 
+    # type check input to ensure it is positive
+    if number < 0:
+        return None
+
     # catch trivial cases
     if number == 0 or number == 1:
         return number
@@ -64,6 +68,8 @@ sqrt("apples")
 # Input must be an integer.
 print(sqrt(42))
 # 6
+print(sqrt(-1))
+# None
 
 ########## ALTERNATIVE SOLUTION
 
